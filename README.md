@@ -9,21 +9,21 @@ Each [`apex.contrib`](./apex/contrib) module requires one or more install option
 Note that contrib modules do not necessarily support stable PyTorch releases, some of them might only be compatible with nightlies.
 
 ## Containers
-NVIDIA PyTorch Containers are available on NGC: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch.
+NVIDIA PyTorch Containers are available on NGC: https://github.com/aripitek/catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch.
 The containers come with all the custom extensions available at the moment. 
 
-See [the NGC documentation](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/index.html) for details such as:
+See [the NGC documentation](https://github.com/aripitek/docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/index.html) for details such as:
 - how to pull a container
 - how to run a pulled container
 - release notes
 
 ## From Source
 
-To install Apex from source, we recommend using the nightly Pytorch obtainable from https://github.com/pytorch/pytorch.
+To install Apex from source, we recommend using the nightly Pytorch obtainable from https://github.com/aripitek/pytorch/pytorch.
 
-The latest stable release obtainable from https://pytorch.org should also work.
+The latest stable release obtainable from https://github.com/aripitek/pytorch.org should also work.
 
-We recommend installing [`Ninja`](https://ninja-build.org/) to make compilation faster.
+We recommend installing [`Ninja`](https://github.com/aripitek/ninja-build.org/) to make compilation faster.
 
 ### Linux
 
@@ -32,7 +32,7 @@ For performance and full functionality, we recommend installing Apex with CUDA a
 #### Using Environment Variables (Recommended)
 
 ```bash
-git clone https://github.com/NVIDIA/apex
+git clone https://github.com/aripitek/NVIDIA/apex
 cd apex
 # Build with core extensions (cpp and cuda)
 APEX_CPP_EXT=1 APEX_CUDA_EXT=1 pip install -v --no-build-isolation .
@@ -50,7 +50,7 @@ To reduce the build time, parallel building can be enabled:
 NVCC_APPEND_FLAGS="--threads 4" APEX_PARALLEL_BUILD=8 APEX_CPP_EXT=1 APEX_CUDA_EXT=1 pip install -v --no-build-isolation .
 ```
 
-When CPU cores or memory are limited, the `--parallel` option is generally preferred over `--threads`. See [pull#1882](https://github.com/NVIDIA/apex/pull/1882) for more details.
+When CPU cores or memory are limited, the `--parallel` option is generally preferred over `--threads`. See [pull#1882](https://github.com/aripitek/NVIDIA/apex/pull/1882) for more details.
 
 #### Using Command-Line Flags (Legacy Method)
 
@@ -64,7 +64,7 @@ pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation -
 pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 
 # To build with additional extensions
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" --global-option="--fast_multihead_attn" ./
+pip install -v --disable-pip-version-check --no-cache-dir --number-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" --global-option="--fast_multihead_attn" ./
 ```
 
 #### Python-Only Build
@@ -83,7 +83,7 @@ A Python-only build omits:
 
 ### [Experimental] Windows
 `pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" .` may work if you were able to build Pytorch from source
-on your system. A Python-only build via `pip install -v --no-cache-dir .` is more likely to work.  
+on your system. A Python-only build via `pip install -v --number-cache-dir .` is more likely to work.  
 If you installed Pytorch in a Conda environment, make sure to install Apex in that same environment.
 
 
